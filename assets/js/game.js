@@ -2,14 +2,16 @@ var fightOrSkip = function() {
     // ask user if they would like to fight or skip
     var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
 
+    
+
     // enter the conditional recursive function call here!
     if (promptFight === "" || promptFight === null) {
         window.alert("You need to provide a valid answer! Please try again.");
         return fightOrSkip();
-    }
+    }    
 
-        promptFight = promptFight.toLowerCase();
-
+    promptFight = promptFight.toLowerCase();
+    
     if  (promptFight === "skip") {
         // confirm skip
         var confirmSkip = window.confirm("Are you sure that you'd like to quit?");
@@ -23,9 +25,7 @@ var fightOrSkip = function() {
             // return true if user wants to leave
             return true;
         }
-    } else {
-        return false;
-    }
+    } 
 }
 
 var fight = function(enemy) {
@@ -97,7 +97,7 @@ var randomNumber = function(min, max) {
 
 //function to start a new game
 var startGame = function() {
-    playerInfo.reset; 
+    playerInfo.reset(); 
 
     // This is a loop
     for(var i = 0; i < enemyInfo.length; i++) {
